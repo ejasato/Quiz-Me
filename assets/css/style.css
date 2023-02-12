@@ -1,0 +1,41 @@
+:root{
+    --teal : #C0DCEC;
+}
+
+body{
+    background-color: var(--teal);
+}
+
+p{
+    font-size: 35px;
+}
+
+h1{
+    text-align:center;
+}
+
+#gameScreen{
+    text-align:center;
+}
+
+.hide {
+    display: none
+}
+
+.flexElement{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+#Highscores-Btn{
+    flex: 1;
+    border:2px;
+    margin: 10px;
+}
+
+#Timer{
+    flex: 1;
+    border:2px ;
+    margin: 10px;
+}

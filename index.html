@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Quiz</title>
+</head>
+<body>
+  <!-- Div to hold our link to high scores -->
+  <div class = "flexElement">
+<nav>
+  <h3 id = "Highscores-Btn">View Highscores</h3>
+</nav>
+  <!-- Div to hold our timer -->
+<div>
+<h3 id = "Timer">Time: 0</h3>
+</div>
+</div>
+<h1>Quiz Challenge</h1>
+  <!-- Wrapper div to hold the rest of the content on our screen -->
+<div id="gameScreen">
+    <!-- Div for the start screen -->
+<div id="Start">
+  <p>Try to answer the following questions within the time limit.  Keep in mind that incorrect answers will penalize your scoretime by ten seconds!</p>
+  <button id="Start-Quiz">Start Quiz</button>
+</div>
+    <!-- Div for the questions -->
+<div id="questionsCard" class="hide">
+  <h2 id="questions">question goes here</h2>
+  <div id="answerSelection">
+    <div class="questionSelection" >
+      <label id="qs1"></label>
+    </div>
+    <div class="questionSelection" >
+      <label id="qs2"></label>
+    </div>
+    <div class="questionSelection" >
+      <label id="qs3"></label>
+    </div>
+    <div class="questionSelection" >
+      <label id="qs4"></label>
+    </div>
+  </div>
+</div>
+
+    <!-- Div for the end screen -->
+<div id="endScreen" class="hide">
+    <h2>All Done!</h2>
+    <p>Your Final score is <span id = "final-score"></span></p>
+    <p>Enter initials:<input type = "text" placeholder="here" name = "initials" id = "initials"></p>
+    <button id="submitBtn">Submit</button>
+</div>
+<div id="HighscoresCard" class="hide">
+  <h2>Top 10 Highscores</h2>
+  <div id="Highscores"></div>
+  <button id="playAgain">Play Again!</button>
+  <button id="clearHighscore">Clear Highscores</button>
+</div>
+    <!-- Div to dynamically display feedback to the user -->
+<div id="questionFeedback"></div>
+</div>
+<script src = "./assets/js/questionsscript.js"></script>
+<script src = "./assets/js/script.js"></script>
+</body>
+</html>
