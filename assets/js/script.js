@@ -36,6 +36,7 @@ function countdown(){
             Timer.textContent = 'Time:' + timeLeft;
             timeLeft--;
         }else{
+            //once the time is up it will auto go to final screen
             Timer.textContent = 'Time: 0';
             clearInterval(timeInterval);
             finalScreen();
@@ -62,6 +63,7 @@ function answerSel(event){
     if (i>=questionList.length){
         finalScreen();
         clearInterval(timeInterval);
+    // checking the answer to what the person picked in the event 
     } else{
         if (event === questionList[i].answer){
             questionFeedback.textContent = "Correct!";
@@ -114,8 +116,7 @@ function addToHighscores() {
 }
 
 //event listener for starting the quiz
-StartQuiz.addEventListener("click", function(event){
-    event.preventDefault();
+StartQuiz.addEventListener("click", function(){
     countdown();
     Start.classList.add("hide");
     questionsCard.classList.remove("hide");
@@ -129,8 +130,7 @@ answerSelection.addEventListener("click", function(event){
 })
 
 //event listener to save score
-submitBtn.addEventListener("click", function(event){
-    event.preventDefault();
+submitBtn.addEventListener("click", function(){
     localStorage.setItem("highscore", JSON.stringify(scoreList));
     addToHighscores();
     Highscores(scoreList);
@@ -147,9 +147,8 @@ HighscoresBtn.addEventListener("click", function(){
 });
 
 //event listener to start the quiz over not working correctly keep the saved score from previous time
-playAgain.addEventListener("click", function(event){
+playAgain.addEventListener("click", function(){
     // location.reload();
-    event.preventDefault();
     countdown();
     Start.classList.add("hide");
     questionsCard.classList.remove("hide");
@@ -157,8 +156,7 @@ playAgain.addEventListener("click", function(event){
 });
 
 //event listener to clear all the highscores
-clearHighscoreBtn.addEventListener("click", function(event){
-    event.preventDefault();
+clearHighscoreBtn.addEventListener("click", function(){
     var scoreList = [];
     Highscores(scoreList);
 });
