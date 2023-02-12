@@ -77,7 +77,7 @@ function answerSel(event){
     }
 }
 
-//pulls up the final screen by adding or removing specific parts of html and adds the score
+//pulls up the final screen by adding or removing hide to hide or show specific parts of html and adds the score
 function finalScreen(){
     finalScore.innHTML = score;
     finalScore.style.display = "inline-block";
@@ -93,6 +93,7 @@ function Highscores(scoreList){
     scoreList.sort((a, b) => {
         return b.score - a.score;
     });
+    //slice to just show the top ten 
     topTen = scoreList.slice(0, 9);
     for (var j = 0; j < topTen.length;j++){
         var player = topTen[j].player;
